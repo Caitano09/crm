@@ -6,19 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js"></script>
 </head>
 
 <body>
-    <table class="table">
-        <thead>
-            <th></th>
-        </thead>
-        <tbody>
-            <tr>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <header class="header">
+            <span>Vida Oxigênio</span>
+        </header>
+        <aside class="aside">
+            <ul class="menu_ul">                
+                <li class="menu_li" onclick="onClick()">
+                    <img src="/icons/home.svg" alt="home icon">
+                    <span>Rotas</span>
+                </li>
+                <ul class="submenu_ul">
+                    <li><a href="/unidadeAlocacao">Unidade Alocação</a></li>
+                    <li><a href="/itemEstoque">Item Estoque</a></li>
+                    <li><a href="/material">Material</a></li>
+                </ul>
+            </ul>
+        </aside>
+        <main class="main">
+            <div class="container_search">
+                <span class="">Filtros</span>
+                <form class="form_search" method="get">
+                    <input class="input_search" type="search" name="search" id="search"/>
+                    <input class="input_submit" type="submit" value="Fazer uma pesquisa">
+                </form>
+            </div>
+        <table class="table">
+            <thead>
+                <% Object.keys(unidades[0]).map(unidade=>{ %>
+                    <th>
+                        <%- unidade %>
+                    </th>
+                    <% }) %>
+            </thead>
+            <tbody>
+                <% unidades.map(unidade=> { %>
+                    <tr>
+                        <% Object.values(unidade).map(value=>{ %>
+                            <td>
+                                <%- value %>
+                            </td>
+                            <% }) %>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </main>
+
+    </div>
 </body>
 
 </html>

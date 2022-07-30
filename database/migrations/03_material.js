@@ -15,8 +15,6 @@
       table.float('precoCusto')    
       table.text('descricao')  
       table.string('imagem')  
-      table.timestamp('created_at').defaultTo(knex.fn.now())
-      table.timestamp('updated_at').defaultTo(knex.fn.now())
     })
   };
   

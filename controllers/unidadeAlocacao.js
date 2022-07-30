@@ -1,9 +1,9 @@
 const UnidadeAlocacao = require('../models/unidadeAlocacao')
 
 const index = async(req, res)=>{
-    const result = await UnidadeAlocacao.query().select()
-    console.log(result)
-    res.render('unidadeAlocacao')
+    const unidades = await UnidadeAlocacao.query().select()
+    res.render('unidadeAlocacao', {unidades}) 
+    
 }
 
 const read = async(req, res)=>{

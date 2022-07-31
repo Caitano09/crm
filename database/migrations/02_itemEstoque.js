@@ -5,7 +5,7 @@
  exports.up = function(knex) {
     return knex.schema.createTable('itemEstoque', table =>{
       table.increments('id')
-      table.integer('codigoMaterial')
+      table.string('codigo')
       table.integer('quantidade')
       table.float('precoUnitario')
       table.string('unidadeAlocacao')

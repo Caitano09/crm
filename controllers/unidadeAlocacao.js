@@ -1,13 +1,13 @@
 const UnidadeAlocacao = require('../models/unidadeAlocacao')
 
 const index = async(req, res)=>{
-    const unidades = await UnidadeAlocacao.query().select()
-    res.render('unidadeAlocacao', {unidades})     
+    const arr = await UnidadeAlocacao.query().select()
+    res.render('main', {arr, route: 'unidadeAlocacao'})     
 }
 
 const read = async(req, res)=>{
-    const unidade = await UnidadeAlocacao.query().select().where({codigo: req.query.codigo.trim()})
-    res.render('unidadeAlocacao', {unidades: unidade}) 
+    const arr = await UnidadeAlocacao.query().select().where({codigo: req.query.codigo.trim()})
+    res.render('main', {arr, route: 'unidadeAlocacao'}) 
 }
 
 const create = async(req, res) =>{
@@ -28,7 +28,7 @@ const deleteOne = async(req, res)=>{
 }
 
 const update = async(req, res) =>{
-    const result = await UnidadeAlocacao.query().select().first()
+    const result = await UnidadeAlocacao.query().select().where({codigo: req.params.codigo.trim()}).first()
     const keys = Object.entries(result)
     res.render('update', {keys})    
 }

@@ -1,0 +1,50 @@
+<%- include('aside') %>
+
+<main class="main">
+    <a class="input_submit" href="/<%-route%>/create">Novo registro</a><br><br>
+
+        <section class="container_search">
+            <span class="">Filtros</span>
+            <form class="form_search" action="/<%-route%>/read" method="get">
+                <div class="group_search">
+                    <label for="search"> Pesquisar Código</label><br />
+                    <input class="input_search" type="search" name="codigo" id="search" />
+                </div>
+                <input class="input_submit" type="submit" value="Fazer uma pesquisa">
+            </form>            
+        </section>
+
+        <% if(arr.length> 0){ %>
+            <div class="table_container">
+                <table class="table">
+                    <thead>
+                        <tr class="table_row">
+                            <% Object.keys(arr[0]).map(key=>{ %>
+                                <th> <%- key %></th>
+                            <% }) %>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% arr.map(obj=> { %>
+                            <tr class="table_row">
+                                <% Object.values(obj).map(value=>{ %>
+                                    <td> <%- value %> </td>
+                                <% }) %>
+                                <td>
+                                    <a href="/<%-route%>/delete/<%- obj.codigo %>"
+                                        onclick="return confirm ('Você quer excluir?')">Excluir</a> |
+                                    <a href="/<%-route%>/update/<%- obj.codigo %>">Editar</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } else{ %>
+            <span>Nenhum Resultado</span>
+        <% } %>
+</main>
+
+<%- include('footer') %>

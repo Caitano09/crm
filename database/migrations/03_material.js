@@ -6,8 +6,8 @@
     return knex.schema.createTable('material', table =>{
       table.increments('id')
       table.string('fornecedor')
-      table.integer('codigo')
-      table.integer('codigoExterno')
+      table.string('codigo')
+      table.string('codigoExterno')
       table.string('nomeProduto')
       table.string('marca')
       table.string('tamanho')  

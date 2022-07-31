@@ -14,7 +14,7 @@ const create = async(req, res) =>{
     const result = await ItemEstoque.query().select().first()
     const keys = Object.keys(result)
     keys.shift()
-    res.render('create', {keys})     
+    res.render('create', {keys, route: 'itemEstoque'})     
 }
 
 const createPost = async(req, res) =>{
@@ -30,7 +30,7 @@ const deleteOne = async(req, res)=>{
 const update = async(req, res) =>{
     const result = await ItemEstoque.query().select().where({codigo: req.params.codigo.trim()}).first()
     const keys = Object.entries(result)
-    res.render('update', {keys})    
+    res.render('update', {keys, route: 'itemEstoque'})    
 }
 
 const updatePost = async(req, res) =>{

@@ -7,9 +7,15 @@
             <span>Rotas</span>
         </li>
         <ul class="submenu_ul">
-            <li><a href="/unidadeAlocacao">Unidade Alocação</a></li>
-            <li><a href="/itemEstoque">Item Estoque</a></li>
-            <li><a href="/material">Material</a></li>
+            <li class="<% if('unidadeAlocacao' === route){ %>li_active<% } %>">
+                <a href="/unidadeAlocacao">Unidade Alocação</a>
+            </li>
+            <li class="<% if('itemEstoque' === route){ %>li_active<% } %>">
+                <a href="/itemEstoque">Item Estoque</a>
+            </li>
+            <li class="<% if('material' === route){ %>li_active<% } %>">
+                <a href="/material">Material</a>
+            </li>
         </ul>
     </ul>
 </aside>

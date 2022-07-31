@@ -87,7 +87,13 @@ html, body{
 }
 
 .submenu_ul > li{    
-    margin: 10px 0;
+    color: #6D7175;
+    padding: 10px 0;
+}
+
+.li_active{
+    color: #0061FF !important;
+    background-color: #EDEEEF;
 }
 
 .submenu_ul > li > a{
@@ -95,12 +101,27 @@ html, body{
     font-family: poppins, arial, sans-serif;
     font-size: 0.8rem;
     text-decoration: none;
-    color: #6D7175;
+    color: inherit;
 } 
 
 .main{
     grid-area: main;
     padding: 30px;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title > h1{
+    color: #2F1160;
+}
+
+.title > a{
+    margin: 0;
+    text-align: center;
 }
 
 .container_search{    

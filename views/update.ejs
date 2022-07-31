@@ -1,0 +1,21 @@
+<%- include('partials/aside') %>
+    <main class="main">
+        <section style="height: auto;" class="container_search">
+            <span class="">Editar Registro</span><br>
+            <form class="form_search" action="" method="post">
+                <% keys.map(([key,value]) =>{ %>
+                    <div style="width: initial;"class="group_search">
+                        <label for="search"> <%- key %></label><br />
+                        <% if(key === "id"){ %>
+                            <input class="input_search" readonly type="text" value="<%- value %>" name="<%- key %>" id="<%- key %>" />
+                        <% } else { %>
+                        <input class="input_search" type="text" value="<%- value %>" name="<%- key %>" id="<%- key %>" />
+                        <% } %>
+                    </div>
+                <% }) %>
+                <input style="margin-left: 45px;" class="input_submit" type="submit" value="Atualizar">
+            </form>            
+        </section>
+    </main>
+
+<%- include('partials/footer') %>

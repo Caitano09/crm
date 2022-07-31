@@ -1,0 +1,17 @@
+<%- include('partials/aside') %>
+    <main class="main">
+        <section style="height: auto;" class="container_search">
+            <span class="">Novo Registro</span><br>
+            <form class="form_search" action="" method="post">
+                <% keys.map(key =>{ %>
+                    <div style="width: initial;"class="group_search">
+                        <label for="search"> <%- key %></label><br />
+                        <input class="input_search" type="text" name="<%- key %>" id="<%- key %>" />
+                    </div>
+                <% }) %>
+                <input style="margin-left: 45px;" class="input_submit" type="submit" value="Cadastrar">
+            </form>            
+        </section>
+    </main>
+
+<%- include('partials/footer') %>

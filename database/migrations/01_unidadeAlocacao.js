@@ -8,7 +8,7 @@
       table.string('nome')
       table.string('filial')
       table.string('codigo')
-      table.enum('tipoAlocacao', ['cliente', 'centroDistribuicao', 'veiculo', 'centroRecarga'])
+      table.string('tipoAlocacao')
       table.string('cidade')
       table.string('estado')
       table.text('detalhe')      

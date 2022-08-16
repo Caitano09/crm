@@ -50,11 +50,12 @@ html, body{
     
 }
 
-.header > span{
+.header > a{
     font-family: merienda, arial, sans-serif;
     color: white;
     padding-left: 50px;
     font-size: 22px;
+    text-decoration: none;
 }
 
 .aside{

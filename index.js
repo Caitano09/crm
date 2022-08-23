@@ -3,7 +3,7 @@ const app = express()
 
 const unidadeAlocacao = require('./routes/unidadeAlocacao')
 const itemEstoque = require('./routes/itemEstoque')
-const material = require('./routes/material')
+const cliente = require('./routes/cliente')
 
 
 const port = process.env.PORT || 3000
@@ -18,6 +18,6 @@ app.use(express.json())
 app.get('/', async (req, res) => res.render('index', { route: ''}))
 app.use('/unidadeAlocacao', unidadeAlocacao)
 app.use('/itemEstoque', itemEstoque) 
-app.use('/material', material)
+app.use('/cliente', cliente)
 
 app.listen(port, ()=>console.log('listening on port: '+port))

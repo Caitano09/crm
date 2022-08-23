@@ -1,15 +1,14 @@
 <%- include('aside') %>
     <main class="main">
         <section style="height: auto;" class="container_search">
-            <span class="">Cadastrar <%-route%></span><br>
-            <form class="form_search" action="" method="post">
+            <form style="flex-direction: column;" class="form_search" action="" method="post">
                 <% keys.map(key =>{ %>
-                    <div style="width: initial;"class="group_search">
+                    <div style="width: 100%;"class="group_search">
                         <label for="search"> <%- key %></label><br />
                         <input class="input_search" type="text" name="<%- key %>" id="<%- key %>" />
                     </div>
                 <% }) %>
-                <input style="margin-left: 45px;" class="input_submit" type="submit" value="Cadastrar">
+                <input style="margin-left: 45px; margin-top: 20px" class="input_submit" type="submit" value="Cadastrar">
             </form>            
         </section>
     </main>

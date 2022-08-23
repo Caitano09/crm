@@ -38,7 +38,8 @@ html, body{
     grid-template-rows: 1fr 9fr;
     grid-template-areas: 
     "header header header header header"
-    "aside  main   main   main  main ";    
+    "aside  aside  aside  aside  aside"
+    "main  main   main   main  main ";    
     height: 100%;
 }
 
@@ -46,8 +47,8 @@ html, body{
     grid-area: header;
     display:  flex;
     align-items: center;
-    background-color: #559EB9;
-    
+    background-color: chocolate;
+    padding: 20px 0;
 }
 
 .header > a{
@@ -60,7 +61,8 @@ html, body{
 
 .aside{
     grid-area: aside;
-    background-color: #F4F4F4;
+    background-color: darkgray;
+    max-height: 300px;
 }
 
 .menu_ul{
@@ -93,8 +95,8 @@ html, body{
 }
 
 .li_active{
-    color: #0061FF !important;
-    background-color: #EDEEEF;
+    color: aliceblue !important;
+    background-color: dimgrey;
 }
 
 .submenu_ul > li > a{
@@ -112,17 +114,19 @@ html, body{
 .title{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .title > h1{
-    color: #2F1160;
+    color: revert;
+    padding-right: 20px;
 }
 
 .title > a{
     margin: 0;
     text-align: center;
+  
 }
 
 .container_search{    
@@ -146,7 +150,7 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: calc(100% - 20px);
     padding:  0 50px;
 }
@@ -158,29 +162,30 @@ html, body{
 .group_search > label{
     font-family: poppins, arial, sans-serif;
     font-size: 1.125rem;
-    color: #2F1160;
+    color: brown;
 }
 
 .input_search{
     outline: none;
-    border: 1px solid #2F1160;
+    border: 1px solid dimgray;
     width: 100%;
     padding: 10px;
     font-family: poppins, arial, sans-serif;
     font-size: 1.125rem;
-    color: #2F1160;
+    color: black;
     background-color: transparent;   
+    border-radius: 30px;    
 }
 
 .input_submit{
     font-family: poppins-light, arial, sans-serif;
     font-weight: lighter;
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 0px;
     width: 230px;
     border: none;
-    background-color: #559EB9;
-    border-radius: 30px;
+    background-color: coral;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
     letter-spacing: 1px;
